@@ -37,6 +37,8 @@ jobs:
           node-version: '16.x'
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
       # Run the migrations
       - run: yarn migrate up
       # Build the Next.js application
